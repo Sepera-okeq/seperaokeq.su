@@ -1,7 +1,9 @@
 
 # Теория и Практика. Экзамен по АИАЯ
 
- Сделано sepera_okeq(Лешкевич Сергей).
+Все вопросы и предложения направлять сюда: https://vk.com/sepera_okeq
+
+Сделано sepera_okeq(Лешкевич Сергей).
 
 # Содержание
 <!-- TOC -->
@@ -1352,8 +1354,8 @@ Your age: 32 your weight: 67.45
 int main()
 { 
     int a;
-    cin >> a;
-    cout << a;
+    std::cin >> a;
+    std::cout << a;
 }
 ```
 
@@ -1368,11 +1370,11 @@ int main()
     
     /* Ввод в массив из консоли*/
     for(int i = 0; i < 10; i++)
-        cin >> a[i];
+        std::cin >> a[i];
 
     /* Вывод массива в консоль*/
     for(int i = 0; i < 10; i++)
-        cout << a[i];
+        std::cout << a[i];
 }
 ```
 
@@ -1388,12 +1390,12 @@ int main()
     /* Ввод в массив из консоли*/
     for(int i = 0; i < 10; i++)
         for(int j = 0; j < 3; j++)
-            cin >> a[i][j];
+            std::cin >> a[i][j];
 
     /* Вывод массива в консоль*/
     for(int i = 0; i < 10; i++)
         for(int j = 0; j < 3; j++)
-            cout << a[i][j];
+            std::cout << a[i][j];
 }
 ```
 
@@ -1403,7 +1405,7 @@ int main()
 #include <iostream>
 
 struct date {
-    string text;
+    std::string text;
     int month;
     int year;
 };
@@ -1411,7 +1413,7 @@ struct date {
 void main() 
 {
     date object;
-    cin >> object2.text >> object2.month >> object2.year; // Ввод значений структуры в одну строку.
-    cout << object2.text << object2.month << object2.year; // Вывод значений структуры в одну строку.
+    std::cin >> object2.text >> object2.month >> object2.year; // Ввод значений структуры в одну строку.
+    std::cout << object2.text << object2.month << object2.year; // Вывод значений структуры в одну строку.
 }
 ```
