@@ -2511,6 +2511,39 @@ int main()
 
 ##### Умножение матрицы на k
 
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int i, j, N = 3, M = 3,     // N - число столбцев. М - число рядков.
+    int a[3][3]; 
+    int k;
+    cout << "\nInput matrix A \n";
+    for (i = 0; i < N; i++)
+    {
+        for (j = 0; j < M; j++)
+            cin >> a[i][j];
+    }
+    cout << "Input k: " << endl;
+    cin >> k;
+    for (i = 0; i < N; i++)
+    {
+        for (j = 0; j < M; j++)
+            a[i][j] =  a[i][j] * k;
+    }
+    for (i = 0; i < N; i++)
+    {
+        for (j = 0; j < M; j++)
+            cout << " " << a[i][j] << " ";
+        cout << endl;
+    }
+    return 0;
+}
+```
+
 ##### Транспортирование матрицы
 
 В данном примере мы транспортируем матрицу 3 на 3:
