@@ -133,6 +133,7 @@
     - [[~] Алгоритмы работы с символьными строками](#-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B-%D1%81-%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%D0%B8-%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0%D0%BC%D0%B8)
         - [Поиск слова максимальной длины](#%D0%BF%D0%BE%D0%B8%D1%81%D0%BA-%D1%81%D0%BB%D0%BE%D0%B2%D0%B0-%D0%BC%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9-%D0%B4%D0%BB%D0%B8%D0%BD%D1%8B)
         - [Поиск количества вхождений заданного слова в строку](#%D0%BF%D0%BE%D0%B8%D1%81%D0%BA-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0-%D0%B2%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B9-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D1%81%D0%BB%D0%BE%D0%B2%D0%B0-%D0%B2-%D1%81%D1%82%D1%80%D0%BE%D0%BA%D1%83)
+        - [Удалить подстроку из строки](#%D1%83%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D1%8C-%D0%BF%D0%BE%D0%B4%D1%81%D1%82%D1%80%D0%BE%D0%BA%D1%83-%D0%B8%D0%B7-%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B8)
     - [[~] Алгоритмы работы с матрицами](#-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B-%D1%81-%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D0%B0%D0%BC%D0%B8)
 
 <!-- /TOC -->
@@ -3715,6 +3716,43 @@ int GetCountWord(char *str, char *w)
     }
 
     return k;
+}
+```
+
+### Удалить подстроку из строки
+
+Даны строки S и S0. Удалить из строки S последнюю подстроку, сов падающую с S0. Если совпадающих подстрок нет, то вывести строку S без изменений.
+
+```c++
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+ 
+char* change_str(char *s1,char *s2)
+{
+ 
+    char *lastP,*p;
+    //int le,i;
+    p = strstr(s1,s2);
+    while (p)
+    {
+        lastP=p++;
+        p=strstr(p,s2);
+    }
+    if (lastP)
+    {
+        strcpy(lastP,lastP+strlen(s2));
+    }
+    return s1;
+}
+int main()
+{
+    char buf[256];
+    char s2[100];
+    strcpy(buf,"bb55aa66cc77bbdefg");
+    strcpy(s2,"bb");
+    change_str(buf,s2); // вызов своей функции
+    cout << "\n" << buf;
 }
 ```
 
